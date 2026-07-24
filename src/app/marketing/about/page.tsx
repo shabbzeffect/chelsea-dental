@@ -12,7 +12,7 @@ const team = [
     bio: 'Dr. Smith founded Chelsea Dental with a vision to provide world-class dental care. He specializes in cosmetic dentistry and has transformed over 2,000 smiles.',
     achievements: ['Award-winning cosmetic dentist', 'Published researcher', 'International speaker'],
     color: 'from-teal-400 to-teal-600',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face',
   },
   {
     name: 'Dr. Sarah Wilson',
@@ -23,7 +23,7 @@ const team = [
     bio: 'Dr. Wilson is a certified Invisalign Diamond provider with expertise in complex orthodontic cases. She has helped hundreds of patients achieve perfect smiles.',
     achievements: ['Invisalign Diamond Provider', '300+ Invisalign cases', 'Orthodontic teaching faculty'],
     color: 'from-purple-400 to-purple-600',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=300&h=300&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=400&h=400&fit=crop&crop=face',
   },
   {
     name: 'Dr. Michael Chen',
@@ -34,7 +34,7 @@ const team = [
     bio: 'Dr. Chen specializes in dental implants and oral surgery. He has placed over 3,000 implants with a 99.5% success rate.',
     achievements: ['3,000+ implants placed', '99.5% success rate', 'Advanced implant training'],
     color: 'from-amber-400 to-orange-500',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&h=300&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face',
   },
   {
     name: 'Dr. Emily Brown',
@@ -45,7 +45,7 @@ const team = [
     bio: 'Dr. Brown is passionate about preventive care and making dental visits comfortable for all ages. She specializes in anxiety-free dentistry.',
     achievements: ['Sedation dentistry certified', 'Pediatric care specialist', 'Patient satisfaction 98%'],
     color: 'from-rose-400 to-rose-600',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face',
   },
   {
     name: 'Dr. David Kim',
@@ -56,7 +56,7 @@ const team = [
     bio: 'Dr. Kim is an expert in root canal treatments, performing over 500 procedures annually with a pain-free approach.',
     achievements: ['500+ root canals/year', 'Pain-free technique specialist', 'Endodontic conference speaker'],
     color: 'from-blue-400 to-blue-600',
-    image: 'https://images.unsplash.com/photo-1612531386530-97d3f89e36f5?w=300&h=300&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop&crop=face',
   },
   {
     name: 'Dr. Lisa Martinez',
@@ -67,7 +67,7 @@ const team = [
     bio: 'Dr. Martinez specializes in treating gum disease and performing gum grafting procedures to restore oral health.',
     achievements: ['Periodontal specialist', 'Gum disease expert', 'Published researcher'],
     color: 'from-emerald-400 to-emerald-600',
-    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=300&h=300&fit=crop&crop=face',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
   },
 ];
 
