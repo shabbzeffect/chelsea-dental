@@ -5,7 +5,10 @@ import { eq, and, gte, lte, sql, count } from 'drizzle-orm';
 
 export async function GET(request: NextRequest) {
   try {
-    await requireAuth();
+    const session = await requireAuth().catch(() => null);
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const { searchParams } = new URL(request.url);
     const startDate = searchParams.get('startDate');
