@@ -71,55 +71,87 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-emerald-50 py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
+      <section className="relative py-20 sm:py-28 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100/80 text-emerald-700 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
             Contact Us
-          </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Get in Touch
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Get in{' '}
+            <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
+              Touch
+            </span>
           </h1>
-          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions or want to book an appointment? We're here to help.
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Have questions or want to book an appointment? We're here to help you 
+            achieve the perfect smile.
           </p>
+
+          {/* Quick Contact Cards */}
+          <div className="flex flex-wrap justify-center gap-4 mt-10">
+            <a href="tel:+442012345678" className="flex items-center gap-3 px-5 py-3 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+              <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-gray-500">Call us</p>
+                <p className="text-sm font-semibold text-gray-900">+44 20 1234 5678</p>
+              </div>
+            </a>
+            <a href="mailto:info@chelseadental.com" className="flex items-center gap-3 px-5 py-3 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+              <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-gray-500">Email us</p>
+                <p className="text-sm font-semibold text-gray-900">info@chelseadental.com</p>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Tabs */}
-      <section className="py-6 sm:py-8 border-b border-gray-100">
+      <section className="py-6 sm:py-8 border-b border-gray-100 bg-white sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center gap-2 sm:gap-4">
+          <div className="flex justify-center gap-2 sm:gap-3">
             <button
               onClick={() => { setActiveTab('contact'); setSubmitted(false); }}
-              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
+              className={`flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'contact'
-                  ? 'bg-teal-600 text-white shadow-lg shadow-teal-200'
+                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-200/50'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span className="hidden xs:inline">Contact Us</span>
-                <span className="xs:hidden">Contact</span>
-              </div>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Send Message
             </button>
             <button
               onClick={() => { setActiveTab('booking'); setSubmitted(false); }}
-              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
+              className={`flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl font-medium transition-all duration-300 text-sm sm:text-base ${
                 activeTab === 'booking'
-                  ? 'bg-teal-600 text-white shadow-lg shadow-teal-200'
+                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-200/50'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span className="hidden xs:inline">Book Appointment</span>
-                <span className="xs:hidden">Booking</span>
-              </div>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Book Appointment
             </button>
           </div>
         </div>
@@ -131,65 +163,66 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Contact Information</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
               
-              <div className="space-y-4 sm:space-y-6">
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="space-y-5">
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Address</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">123 Dental Avenue<br />Chelsea, London SW3 6NY</p>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Visit Us</h3>
+                    <p className="text-gray-600 text-sm">123 Dental Avenue</p>
+                    <p className="text-gray-600 text-sm">Chelsea, London SW3 6NY</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Phone</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">+44 20 1234 5678</p>
-                    <p className="text-xs sm:text-sm text-gray-500">Mon-Fri 9am-6pm, Sat 9am-2pm</p>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
+                    <p className="text-gray-600 text-sm">+44 20 1234 5678</p>
+                    <p className="text-gray-500 text-xs">Mon-Fri 9am-6pm, Sat 9am-2pm</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Email</h3>
-                    <p className="text-gray-600 text-sm sm:text-base break-all">info@chelseadental.com</p>
-                    <p className="text-xs sm:text-sm text-gray-500">We respond within 24 hours</p>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
+                    <p className="text-gray-600 text-sm break-all">info@chelseadental.com</p>
+                    <p className="text-gray-500 text-xs">We respond within 24 hours</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl hover:bg-emerald-50 transition-colors">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Hours</h3>
-                    <p className="text-gray-600 text-sm sm:text-base">Mon-Fri: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600 text-sm sm:text-base">Saturday: 9:00 AM - 2:00 PM</p>
-                    <p className="text-gray-600 text-sm sm:text-base">Sunday: Closed</p>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Opening Hours</h3>
+                    <p className="text-gray-600 text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                    <p className="text-gray-600 text-sm">Saturday: 9:00 AM - 2:00 PM</p>
+                    <p className="text-gray-600 text-sm">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
 
               {/* Interactive Map */}
-              <div className="mt-8 rounded-2xl overflow-hidden border border-gray-200">
+              <div className="mt-8 rounded-3xl overflow-hidden shadow-lg border border-gray-200">
                 <iframe
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1755,51.4875,-0.1655,51.4925&layer=mapnik&marker=51.49,-0.17"
                   className="w-full h-64 border-0"
@@ -197,35 +230,48 @@ export default function ContactPage() {
                   loading="lazy"
                 />
               </div>
-              <div className="mt-3 text-center">
+              <div className="mt-4 text-center">
                 <a 
                   href="https://www.openstreetmap.org/?mlat=51.49&mlon=-0.17#map=16/51.49/-0.17" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-sm text-teal-600 hover:text-teal-700 font-medium"
+                  className="inline-flex items-center gap-2 text-sm text-emerald-600 hover:text-emerald-700 font-medium"
                 >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                   View larger map
                 </a>
               </div>
             </div>
 
             {/* Forms */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 sm:p-6 md:p-8">
+            <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 lg:p-10">
               {/* Contact Form */}
               {activeTab === 'contact' && (
                 <>
                   {submitted ? (
                     <div className="text-center py-12">
-                      <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-emerald-200/50">
+                        <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
-                      <p className="text-gray-600 mb-6">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">Message Sent!</h3>
+                      <p className="text-gray-600 mb-8 max-w-sm mx-auto">Thank you for contacting us. We'll get back to you within 24 hours.</p>
                       <button
                         onClick={() => { setSubmitted(false); setContactForm({ name: '', email: '', phone: '', subject: '', message: '' }); }}
-                        className="px-6 py-3 bg-teal-600 text-white rounded-xl hover:bg-teal-700 font-medium"
+                        className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl hover:from-emerald-600 hover:to-teal-600 font-semibold shadow-lg shadow-emerald-200/50 transition-all duration-300"
+                      >
+                        Send Another Message
+                      </button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleContactSubmit} className="space-y-5">
+                      <div className="mb-6">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                        <p className="text-gray-500 text-sm">We'd love to hear from you. Fill out the form below.</p>
+                      </div>
                       >
                         Send Another Message
                       </button>
@@ -379,19 +425,26 @@ export default function ContactPage() {
       </section>
 
       {/* Emergency Section */}
-      <section className="py-12 sm:py-16 bg-rose-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-            <svg className="w-7 h-7 sm:w-8 sm:h-8 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <section className="relative py-16 sm:py-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-rose-50 via-red-50 to-rose-50"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-rose-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-rose-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl shadow-rose-200/50">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Dental Emergency?</h2>
-          <p className="text-gray-600 mb-4 text-sm sm:text-base">
-            If you have a dental emergency, call us immediately. We offer 24/7 emergency care.
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Dental Emergency?</h2>
+          <p className="text-gray-600 mb-8 text-base sm:text-lg max-w-lg mx-auto">
+            If you have a dental emergency, call us immediately. We offer 24/7 emergency care for urgent situations.
           </p>
-          <a href="tel:+442012345678" className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-rose-600 text-white rounded-xl hover:bg-rose-700 font-semibold shadow-lg transition-all duration-200 text-sm sm:text-base">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <a 
+            href="tel:+442012345678" 
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-rose-500 to-red-500 text-white rounded-2xl hover:from-rose-600 hover:to-red-600 font-bold shadow-xl shadow-rose-200/50 transition-all duration-300 text-base sm:text-lg"
+          >
+            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
             Call Now: +44 20 1234 5678
