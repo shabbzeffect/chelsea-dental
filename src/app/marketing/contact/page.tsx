@@ -272,13 +272,6 @@ export default function ContactPage() {
                         <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
                         <p className="text-gray-500 text-sm">We'd love to hear from you. Fill out the form below.</p>
                       </div>
-                      >
-                        Send Another Message
-                      </button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleContactSubmit} className="space-y-5">
-                      <h2 className="text-xl font-semibold text-gray-900 mb-4">Send Us a Message</h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wide">Name</label>
