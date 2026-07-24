@@ -13,67 +13,93 @@ export default function MarketingLayout({
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100/50">
+        {/* Top bar with contact info - hidden on mobile */}
+        <div className="hidden lg:block bg-gray-900 text-gray-300 text-xs py-2">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <svg className="w-3.5 h-3.5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>+44 20 1234 5678</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-3.5 h-3.5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Mon-Fri: 9am-6pm | Sat: 9am-2pm</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <Link href="/login" className="hover:text-teal-400 transition-colors">Staff Portal</Link>
+              <span className="text-gray-600">|</span>
+              <Link href="/register" className="hover:text-teal-400 transition-colors">Register</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Main navigation */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-16 lg:h-18">
             {/* Logo */}
-            <Link href="/marketing" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-200">
+            <Link href="/marketing" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-200 group-hover:shadow-teal-300 transition-shadow">
                 <span className="text-white font-bold text-lg">CD</span>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-lg font-bold text-gray-900">Chelsea Dental</h1>
-                <p className="text-xs text-gray-500">Premium Dental Care</p>
+                <h1 className="text-lg font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Chelsea Dental</h1>
+                <p className="text-xs text-gray-500 tracking-wider uppercase">Premium Dental Care</p>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/marketing" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+            <div className="hidden lg:flex items-center gap-1">
+              <Link href="/marketing" className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50">
                 Home
               </Link>
-              <Link href="/marketing/services" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+              <Link href="/marketing/services" className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50">
                 Services
               </Link>
-              <Link href="/marketing/about" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+              <Link href="/marketing/about" className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50">
                 About
               </Link>
-              <Link href="/marketing/team" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+              <Link href="/marketing/team" className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50">
                 Our Team
               </Link>
-              <Link href="/marketing/pricing" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+              <Link href="/marketing/pricing" className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50">
                 Pricing
               </Link>
-              <Link href="/marketing/gallery" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
-                Gallery
-              </Link>
-              <Link href="/marketing/testimonials" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+              <Link href="/marketing/testimonials" className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50">
                 Testimonials
               </Link>
-              <Link href="/marketing/contact" className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors">
+              <Link href="/marketing/contact" className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50">
                 Contact
               </Link>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <Link
                 href="/login"
-                className="hidden sm:flex px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors"
+                className="hidden sm:flex px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors rounded-lg hover:bg-teal-50/50"
               >
                 Sign In
               </Link>
               <Link
                 href="/marketing/booking"
-                className="hidden sm:inline-flex px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-semibold shadow-lg shadow-teal-200 transition-all duration-200"
+                className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-semibold shadow-lg shadow-teal-200/50 hover:shadow-xl hover:shadow-teal-300/50 transition-all duration-300"
               >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
                 Book Now
               </Link>
 
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2.5 rounded-lg text-gray-600 hover:bg-gray-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                className="lg:hidden p-2.5 rounded-xl text-gray-600 hover:bg-teal-50 hover:text-teal-600 min-w-[44px] min-h-[44px] flex items-center justify-center transition-all"
                 aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               >
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,42 +115,71 @@ export default function MarketingLayout({
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-100 bg-white relative z-50">
+            <div className="lg:hidden py-4 border-t border-gray-100 bg-white relative z-50 animate-fade-in">
               <div className="flex flex-col space-y-1">
-                <Link href="/marketing" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
+                <Link href="/marketing" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-3 px-4 rounded-xl transition-all">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
                   Home
                 </Link>
-                <Link href="/marketing/services" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
+                <Link href="/marketing/services" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-3 px-4 rounded-xl transition-all">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
                   Services
                 </Link>
-                <Link href="/marketing/about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
+                <Link href="/marketing/about" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-3 px-4 rounded-xl transition-all">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   About
                 </Link>
-                <Link href="/marketing/team" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
+                <Link href="/marketing/team" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-3 px-4 rounded-xl transition-all">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                   Our Team
                 </Link>
-                <Link href="/marketing/pricing" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
+                <Link href="/marketing/pricing" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-3 px-4 rounded-xl transition-all">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                   Pricing
                 </Link>
-                <Link href="/marketing/gallery" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
-                  Gallery
-                </Link>
-                <Link href="/marketing/testimonials" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
+                <Link href="/marketing/testimonials" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-3 px-4 rounded-xl transition-all">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
                   Testimonials
                 </Link>
-                <Link href="/marketing/contact" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
+                <Link href="/marketing/contact" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 py-3 px-4 rounded-xl transition-all">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                   Contact
                 </Link>
-                <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
-                  Sign In
-                </Link>
-                <div className="pt-2 border-t border-gray-100 mt-2">
+                
+                <div className="pt-3 border-t border-gray-100 mt-2 space-y-2">
                   <Link
                     href="/marketing/booking"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block w-full text-center px-5 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-semibold shadow-lg shadow-teal-200 transition-all duration-200"
+                    className="flex items-center justify-center gap-2 w-full px-5 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-semibold shadow-lg shadow-teal-200/50 transition-all duration-300"
                   >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
                     Book Appointment
+                  </Link>
+                  <Link
+                    href="/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full px-5 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 text-sm font-medium transition-all"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                    </svg>
+                    Sign In
                   </Link>
                 </div>
               </div>
@@ -134,7 +189,7 @@ export default function MarketingLayout({
       </nav>
 
       {/* Main Content */}
-      <main className="pt-16">
+      <main className="pt-[calc(4rem+2rem)] lg:pt-[calc(4.5rem+2rem)]">
         {children}
       </main>
 
