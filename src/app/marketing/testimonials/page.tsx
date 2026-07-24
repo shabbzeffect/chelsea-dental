@@ -10,7 +10,7 @@ const testimonials = [
     content: 'Chelsea Dental completely transformed my smile. The team is incredibly professional and caring. I was nervous about getting veneers, but Dr. Smith made the entire process comfortable and stress-free. The results exceeded my expectations!',
     rating: 5,
     treatment: 'Veneers',
-    color: 'from-pink-400 to-pink-600',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const testimonials = [
     content: 'The best dental experience I\'ve ever had. The staff is friendly, the technology is state-of-the-art, and the results are amazing. I\'ve been coming here for regular check-ups and couldn\'t be happier.',
     rating: 5,
     treatment: 'General Care',
-    color: 'from-blue-400 to-blue-600',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const testimonials = [
     content: 'I was terrified of dentists until I came to Chelsea Dental. They made me feel completely comfortable and the treatment was painless. Now I actually look forward to my appointments!',
     rating: 5,
     treatment: 'Anxiety Management',
-    color: 'from-emerald-400 to-emerald-600',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const testimonials = [
     content: 'Had a dental emergency and they saw me immediately. The team was professional, efficient, and genuinely caring. I\'ve been a loyal patient ever since.',
     rating: 5,
     treatment: 'Emergency Care',
-    color: 'from-rose-400 to-rose-600',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const testimonials = [
     content: 'My Invisalign treatment was seamless. Dr. Wilson monitored my progress carefully and the results are perfect. I couldn\'t be happier with my straight teeth!',
     rating: 5,
     treatment: 'Invisalign',
-    color: 'from-purple-400 to-purple-600',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const testimonials = [
     content: 'After losing a tooth, I was worried about dental implants. The team at Chelsea Dental made the process easy and the implant looks and feels completely natural.',
     rating: 5,
     treatment: 'Dental Implant',
-    color: 'from-amber-400 to-amber-600',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 7,
@@ -64,7 +64,7 @@ const testimonials = [
     content: 'Professional, clean, and welcoming environment. The staff remembers my name and preferences. It feels like family here. Highly recommend to anyone looking for quality dental care.',
     rating: 5,
     treatment: 'Regular Check-ups',
-    color: 'from-teal-400 to-teal-600',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 8,
@@ -73,7 +73,7 @@ const testimonials = [
     content: 'I needed extensive work done and was anxious about the cost. Chelsea Dental worked with me on a payment plan that made everything affordable. The quality of care is exceptional.',
     rating: 5,
     treatment: 'Full Mouth Restoration',
-    color: 'from-indigo-400 to-indigo-600',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face',
   },
   {
     id: 9,
@@ -82,7 +82,7 @@ const testimonials = [
     content: 'My kids actually enjoy going to the dentist now! The pediatric team is amazing with children. They make dental visits fun and educational.',
     rating: 5,
     treatment: 'Pediatric Care',
-    color: 'from-cyan-400 to-cyan-600',
+    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face',
   },
 ];
 
@@ -142,8 +142,12 @@ export default function TestimonialsPage() {
                 <p className="text-gray-600 mb-4 sm:mb-6 italic leading-relaxed text-sm sm:text-base">"{testimonial.content}"</p>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-                    <div className={`w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold shadow-lg text-xs sm:text-sm flex-shrink-0`}>
-                      {testimonial.name.charAt(0)}
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden flex-shrink-0">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="min-w-0">
                       <p className="font-semibold text-gray-900 text-xs sm:text-sm truncate">{testimonial.name}</p>

@@ -9,36 +9,42 @@ const services = [
     description: 'Comprehensive check-ups, cleanings, and preventive care to keep your smile healthy.',
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     color: 'from-blue-500 to-blue-600',
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=250&fit=crop',
   },
   {
     title: 'Cosmetic Dentistry',
     description: 'Teeth whitening, veneers, and smile makeovers to enhance your appearance.',
     icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
     color: 'from-purple-500 to-purple-600',
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&h=250&fit=crop',
   },
   {
     title: 'Orthodontics',
     description: 'Braces, Invisalign, and aligners for perfect teeth alignment.',
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
     color: 'from-emerald-500 to-emerald-600',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=250&fit=crop',
   },
   {
     title: 'Implants',
     description: 'Dental implants to replace missing teeth with natural-looking alternatives.',
     icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.78 0-2.678-2.149-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
     color: 'from-amber-500 to-orange-500',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=250&fit=crop',
   },
   {
     title: 'Root Canal',
     description: 'Pain-free root canal treatments to save and preserve your natural teeth.',
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
     color: 'from-rose-500 to-rose-600',
+    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=250&fit=crop',
   },
   {
     title: 'Emergency Care',
     description: '24/7 emergency dental services for urgent situations.',
     icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
     color: 'from-red-500 to-red-600',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=250&fit=crop',
   },
 ];
 
@@ -48,18 +54,21 @@ const testimonials = [
     role: 'Patient since 2020',
     content: 'Chelsea Dental completely transformed my smile. The team is incredibly professional and caring. I couldn\'t be happier with the results!',
     rating: 5,
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
   },
   {
     name: 'Michael Chen',
     role: 'Patient since 2019',
     content: 'The best dental experience I\'ve ever had. The staff is friendly, the technology is state-of-the-art, and the results are amazing.',
     rating: 5,
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
   },
   {
     name: 'Emma Williams',
     role: 'Patient since 2021',
     content: 'I was terrified of dentists until I came to Chelsea Dental. They made me feel comfortable and the treatment was painless.',
     rating: 5,
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
   },
 ];
 
@@ -143,19 +152,26 @@ export default function MarketingHome() {
               </div>
             </div>
 
-            {/* Right Content - Stats Cards */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow"
-                >
-                  <p className="text-3xl font-bold bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
-                    {stat.number}
-                  </p>
-                  <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+            {/* Right Content - Hero Image + Stats */}
+            <div className="hidden lg:block">
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=500&fit=crop" 
+                    alt="Modern dental clinic with advanced equipment" 
+                    className="w-full h-80 object-cover"
+                  />
                 </div>
-              ))}
+                {/* Floating Stats Cards */}
+                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">15+</p>
+                  <p className="text-xs text-gray-500">Years Experience</p>
+                </div>
+                <div className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
+                  <p className="text-2xl font-bold bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">10K+</p>
+                  <p className="text-xs text-gray-500">Happy Patients</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -196,20 +212,30 @@ export default function MarketingHome() {
               <Link
                 key={index}
                 href="/marketing/services"
-                className="group bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300"
+                className="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300 overflow-hidden"
               >
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
-                  </svg>
+                <div className="relative h-40 sm:h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className={`absolute top-3 left-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{service.description}</p>
-                <div className="mt-3 sm:mt-4 flex items-center text-teal-600 text-xs sm:text-sm font-medium">
-                  Learn more
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{service.description}</p>
+                  <div className="mt-3 flex items-center text-teal-600 text-xs sm:text-sm font-medium">
+                    Learn more
+                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -360,8 +386,12 @@ export default function MarketingHome() {
                 </div>
                 <p className="text-gray-600 mb-4 sm:mb-6 italic text-sm sm:text-base">"{testimonial.content}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center text-white font-semibold text-xs sm:text-sm">
-                    {testimonial.name.charAt(0)}
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-xs sm:text-sm">{testimonial.name}</p>

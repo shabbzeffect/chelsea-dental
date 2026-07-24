@@ -12,7 +12,7 @@ const dentists = [
     bio: 'Dr. Smith founded Chelsea Dental with a vision to provide world-class dental care. He specializes in cosmetic dentistry and has transformed over 2,000 smiles.',
     achievements: ['Award-winning cosmetic dentist', 'Published researcher', 'International speaker'],
     color: 'from-teal-400 to-teal-600',
-    initial: 'JS',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Dr. Sarah Wilson',
@@ -23,7 +23,7 @@ const dentists = [
     bio: 'Dr. Wilson is a certified Invisalign Diamond provider with expertise in complex orthodontic cases.',
     achievements: ['Invisalign Diamond Provider', '300+ Invisalign cases', 'Teaching faculty'],
     color: 'from-purple-400 to-purple-600',
-    initial: 'SW',
+    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Dr. Michael Chen',
@@ -34,7 +34,7 @@ const dentists = [
     bio: 'Dr. Chen specializes in dental implants and oral surgery with a 99.5% success rate.',
     achievements: ['3,000+ implants placed', '99.5% success rate', 'Advanced training'],
     color: 'from-amber-400 to-orange-500',
-    initial: 'MC',
+    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Dr. Emily Brown',
@@ -45,7 +45,7 @@ const dentists = [
     bio: 'Dr. Brown is passionate about preventive care and anxiety-free dentistry.',
     achievements: ['Sedation certified', 'Pediatric specialist', '98% satisfaction'],
     color: 'from-rose-400 to-rose-600',
-    initial: 'EB',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Dr. David Kim',
@@ -56,7 +56,7 @@ const dentists = [
     bio: 'Dr. Kim is an expert in pain-free root canal treatments.',
     achievements: ['500+ root canals/year', 'Pain-free specialist', 'Conference speaker'],
     color: 'from-blue-400 to-blue-600',
-    initial: 'DK',
+    image: 'https://images.unsplash.com/photo-1612531386530-97d3f89e36f5?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Dr. Lisa Martinez',
@@ -67,7 +67,7 @@ const dentists = [
     bio: 'Dr. Martinez specializes in gum disease treatment and restoration.',
     achievements: ['Periodontal specialist', 'Published researcher', 'Expert in grafting'],
     color: 'from-emerald-400 to-emerald-600',
-    initial: 'LM',
+    image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=300&h=300&fit=crop&crop=face',
   },
 ];
 
@@ -77,28 +77,28 @@ const supportStaff = [
     role: 'Practice Manager',
     description: 'Oversees daily operations and ensures exceptional patient experience.',
     color: 'from-indigo-400 to-indigo-600',
-    initial: 'AF',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Rachel Green',
     role: 'Head Dental Nurse',
     description: 'Leads our nursing team with 10+ years of clinical experience.',
     color: 'from-pink-400 to-pink-600',
-    initial: 'RG',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Tom Bradley',
     role: 'Lead Dental Hygienist',
     description: 'Specializes in preventive care and patient education.',
     color: 'from-cyan-400 to-cyan-600',
-    initial: 'TB',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
   },
   {
     name: 'Sophie Chen',
     role: 'Reception Team Lead',
     description: 'First point of contact, ensuring smooth patient journeys.',
     color: 'from-amber-400 to-amber-600',
-    initial: 'SC',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
   },
 ];
 
@@ -140,15 +140,18 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {dentists.map((dentist, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
-                {/* Header */}
-                <div className={`bg-gradient-to-br ${dentist.color} p-5 sm:p-6 text-center`}>
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
-                    <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-br bg-clip-text text-transparent" style={{backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`}}>
-                      {dentist.initial}
-                    </span>
+                {/* Header with image */}
+                <div className="relative h-48 sm:h-56 overflow-hidden">
+                  <img 
+                    src={dentist.image} 
+                    alt={dentist.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-lg sm:text-xl font-bold text-white">{dentist.name}</h3>
+                    <p className="text-white/90 text-xs sm:text-sm">{dentist.role}</p>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">{dentist.name}</h3>
-                  <p className="text-white/80 text-xs sm:text-sm">{dentist.role}</p>
                 </div>
 
                 {/* Content */}
@@ -207,13 +210,27 @@ export default function TeamPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {supportStaff.map((staff, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 text-center hover:shadow-lg transition-shadow">
-                <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${staff.color} rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg`}>
-                  <span className="text-xl sm:text-2xl font-bold text-white">{staff.initial}</span>
+              <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-32 sm:h-40 overflow-hidden">
+                  <img 
+                    src={staff.image} 
+                    alt={staff.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">{staff.name}</h3>
-                <p className="text-teal-600 text-xs sm:text-sm font-medium mb-2">{staff.role}</p>
-                <p className="text-gray-500 text-xs sm:text-sm">{staff.description}</p>
+                <div className="p-4 sm:p-5 text-center -mt-8 relative">
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-white overflow-hidden mx-auto mb-3 shadow-lg`}>
+                    <img 
+                      src={staff.image} 
+                      alt={staff.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">{staff.name}</h3>
+                  <p className="text-teal-600 text-xs sm:text-sm font-medium mb-2">{staff.role}</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">{staff.description}</p>
+                </div>
               </div>
             ))}
           </div>

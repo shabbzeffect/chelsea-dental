@@ -50,7 +50,10 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    await requireAuth();
+    const session = await requireAuth().catch(() => null);
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const appointment = await db.query.appointments.findFirst({
       where: eq(schema.appointments.id, id),

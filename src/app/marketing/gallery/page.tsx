@@ -17,96 +17,84 @@ const galleryItems = [
     category: 'clinic',
     title: 'Reception Area',
     description: 'Welcoming and comfortable waiting area',
-    color: 'from-blue-400 to-blue-600',
-    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=450&fit=crop',
   },
   {
     id: 2,
     category: 'clinic',
     title: 'Treatment Rooms',
     description: 'State-of-the-art treatment facilities',
-    color: 'from-teal-400 to-teal-600',
-    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=450&fit=crop',
   },
   {
     id: 3,
     category: 'equipment',
     title: 'Digital X-Ray System',
     description: 'Advanced digital imaging technology',
-    color: 'from-purple-400 to-purple-600',
-    icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=450&fit=crop',
   },
   {
     id: 4,
     category: 'team',
     title: 'Dr. James Smith',
     description: 'Lead Dentist - Cosmetic Specialist',
-    color: 'from-emerald-400 to-emerald-600',
-    icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=450&fit=crop',
   },
   {
     id: 5,
     category: 'smiles',
     title: 'Teeth Whitening Results',
     description: 'Dramatic smile transformation',
-    color: 'from-amber-400 to-orange-500',
-    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&h=450&fit=crop',
   },
   {
     id: 6,
     category: 'equipment',
     title: 'Dental Chair',
     description: 'Ergonomic patient chairs',
-    color: 'from-indigo-400 to-indigo-600',
-    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2-2.286L6 21l2.286-2.143L12 15l2.286 2.143L20 12l-5.714-2.143L16 5h-4z',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=450&fit=crop',
   },
   {
     id: 7,
     category: 'clinic',
     title: 'Consultation Room',
     description: 'Private consultation spaces',
-    color: 'from-cyan-400 to-cyan-600',
-    icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+    image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&h=450&fit=crop',
   },
   {
     id: 8,
     category: 'team',
     title: 'Dr. Sarah Wilson',
     description: 'Orthodontist - Invisalign Expert',
-    color: 'from-pink-400 to-pink-600',
-    icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
+    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=600&h=450&fit=crop',
   },
   {
     id: 9,
     category: 'smiles',
     title: 'Before & After Veneers',
     description: 'Complete smile makeover',
-    color: 'from-rose-400 to-rose-600',
-    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=450&fit=crop',
   },
   {
     id: 10,
     category: 'equipment',
     title: '3D Scanner',
     description: 'Digital impression technology',
-    color: 'from-violet-400 to-violet-600',
-    icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=450&fit=crop',
   },
   {
     id: 11,
     category: 'clinic',
     title: 'Sterilization Room',
     description: 'Hospital-grade sterilization',
-    color: 'from-green-400 to-green-600',
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    image: 'https://images.unsplash.com/photo-1581595220911-39e5f66986f2?w=600&h=450&fit=crop',
   },
   {
     id: 12,
     category: 'smiles',
     title: 'Invisalign Results',
     description: 'Perfect alignment achieved',
-    color: 'from-cyan-400 to-cyan-600',
-    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=450&fit=crop',
   },
 ];
 
@@ -167,13 +155,14 @@ export default function GalleryPage() {
                 onClick={() => setSelectedItem(item)}
                 className="group cursor-pointer"
               >
-                <div className={`bg-gradient-to-br ${item.color} rounded-2xl aspect-[4/3] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02]`}>
-                  <div className="text-center text-white p-4 sm:p-6">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                      </svg>
-                    </div>
+                <div className="relative rounded-2xl aspect-[4/3] overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02]">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <h3 className="text-sm sm:text-lg font-semibold mb-1">{item.title}</h3>
                     <p className="text-white/80 text-xs sm:text-sm">{item.description}</p>
                   </div>
@@ -202,14 +191,14 @@ export default function GalleryPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className={`bg-gradient-to-br ${selectedItem.color} rounded-2xl aspect-video flex items-center justify-center shadow-2xl`}>
-              <div className="text-center text-white p-6 sm:p-8">
-                <div className="w-16 h-16 sm:w-24 sm:h-24 bg-white/20 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <svg className="w-8 h-8 sm:w-12 sm:h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={selectedItem.icon} />
-                  </svg>
-                </div>
-                <h2 className="text-xl sm:text-3xl font-bold mb-2">{selectedItem.title}</h2>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={selectedItem.image} 
+                alt={selectedItem.title}
+                className="w-full aspect-video object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 sm:p-8">
+                <h2 className="text-xl sm:text-3xl font-bold text-white mb-2">{selectedItem.title}</h2>
                 <p className="text-white/80 text-sm sm:text-lg">{selectedItem.description}</p>
               </div>
             </div>

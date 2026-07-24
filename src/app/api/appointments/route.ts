@@ -47,7 +47,10 @@ async function getAppointmentDetails(patientId: string, dentistId?: string) {
 
 export async function GET(request: NextRequest) {
   try {
-    await requireAuth();
+    const session = await requireAuth().catch(() => null);
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const { searchParams } = new URL(request.url);
     const patientId = searchParams.get('patientId') || undefined;
@@ -100,7 +103,10 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    await requireRole(['admin', 'dentist', 'receptionist']);
+    const session = await requireRole(['admin', 'dentist', 'receptionist']).catch(() => null);
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const body = await request.json();
     const validatedData = createAppointmentSchema.parse(body);
