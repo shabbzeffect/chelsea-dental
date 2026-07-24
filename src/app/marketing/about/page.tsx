@@ -92,44 +92,44 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-blue-50 py-20">
+      <section className="bg-gradient-to-br from-slate-50 to-blue-50 py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
               <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
                 About Us
               </span>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Dedicated to Your Dental Health
               </h1>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 For over 15 years, Chelsea Dental has been providing exceptional dental care 
                 to the London community. Our team of experienced professionals is committed 
                 to helping you achieve and maintain a healthy, beautiful smile.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                 We combine the latest dental technology with a warm, caring approach to 
                 ensure every visit is comfortable and effective. Your oral health is our 
                 top priority, and we're here to support you every step of the way.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-blue-500 to-indigo-500 rounded-3xl p-8 shadow-xl">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl font-bold text-white">15+</p>
-                  <p className="text-blue-100 text-sm">Years Experience</p>
+            <div className="bg-gradient-to-br from-blue-500 to-indigo-500 rounded-3xl p-5 sm:p-8 shadow-xl">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="bg-white/20 rounded-2xl p-3 sm:p-6 text-center">
+                  <p className="text-xl sm:text-3xl font-bold text-white">15+</p>
+                  <p className="text-blue-100 text-xs sm:text-sm">Years Experience</p>
                 </div>
-                <div className="bg-white/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl font-bold text-white">10K+</p>
-                  <p className="text-blue-100 text-sm">Happy Patients</p>
+                <div className="bg-white/20 rounded-2xl p-3 sm:p-6 text-center">
+                  <p className="text-xl sm:text-3xl font-bold text-white">10K+</p>
+                  <p className="text-blue-100 text-xs sm:text-sm">Happy Patients</p>
                 </div>
-                <div className="bg-white/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl font-bold text-white">50+</p>
-                  <p className="text-blue-100 text-sm">Expert Dentists</p>
+                <div className="bg-white/20 rounded-2xl p-3 sm:p-6 text-center">
+                  <p className="text-xl sm:text-3xl font-bold text-white">50+</p>
+                  <p className="text-blue-100 text-xs sm:text-sm">Expert Dentists</p>
                 </div>
-                <div className="bg-white/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl font-bold text-white">99%</p>
-                  <p className="text-blue-100 text-sm">Satisfaction</p>
+                <div className="bg-white/20 rounded-2xl p-3 sm:p-6 text-center">
+                  <p className="text-xl sm:text-3xl font-bold text-white">99%</p>
+                  <p className="text-blue-100 text-xs sm:text-sm">Satisfaction</p>
                 </div>
               </div>
             </div>
@@ -138,27 +138,27 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-4">
               Our Values
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               What We Stand For
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {values.map((value, index) => (
-              <div key={index} className="text-center p-6 rounded-2xl bg-gray-50 hover:bg-teal-50 transition-colors">
-                <div className="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-7 h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div key={index} className="text-center p-5 sm:p-6 rounded-2xl bg-gray-50 hover:bg-teal-50 transition-colors">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={value.icon} />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600 text-sm">{value.description}</p>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">{value.description}</p>
               </div>
             ))}
           </div>
@@ -166,59 +166,59 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
               Our Team
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Meet Our Expert Dentists
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Our team of experienced professionals is dedicated to providing you with 
               the best possible dental care.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {team.map((member, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
                 {/* Header with gradient */}
-                <div className={`bg-gradient-to-br ${member.color} p-6 text-center`}>
-                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <span className="text-3xl font-bold bg-gradient-to-br bg-clip-text text-transparent" style={{backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`}}>
+                <div className={`bg-gradient-to-br ${member.color} p-5 sm:p-6 text-center`}>
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                    <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-br bg-clip-text text-transparent" style={{backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`}}>
                       {member.name.split(' ').slice(1).join(' ').charAt(0)}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                  <p className="text-white/80 text-sm">{member.role}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">{member.name}</h3>
+                  <p className="text-white/80 text-xs sm:text-sm">{member.role}</p>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">
+                <div className="p-5 sm:p-6">
+                  <div className="mb-3 sm:mb-4 flex flex-wrap gap-1.5 sm:gap-2">
+                    <span className="inline-block px-2.5 sm:px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">
                       {member.specialty}
                     </span>
-                    <span className="inline-block ml-2 px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
+                    <span className="inline-block px-2.5 sm:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
                       {member.experience}
                     </span>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{member.bio}</p>
 
-                  <div className="mb-4">
-                    <p className="text-xs font-medium text-gray-500 mb-2">Education</p>
-                    <p className="text-sm text-gray-700">{member.education}</p>
+                  <div className="mb-3 sm:mb-4">
+                    <p className="text-xs font-medium text-gray-500 mb-1.5 sm:mb-2">Education</p>
+                    <p className="text-xs sm:text-sm text-gray-700">{member.education}</p>
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium text-gray-500 mb-2">Achievements</p>
+                    <p className="text-xs font-medium text-gray-500 mb-1.5 sm:mb-2">Achievements</p>
                     <ul className="space-y-1">
                       {member.achievements.map((achievement, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <li key={i} className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           {achievement}
@@ -234,18 +234,18 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Meet Our Team?</h2>
-          <p className="text-teal-100 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">Ready to Meet Our Team?</h2>
+          <p className="text-teal-100 mb-6 sm:mb-8 text-sm sm:text-base">
             Schedule a consultation and experience the Chelsea Dental difference.
           </p>
           <Link
             href="/marketing/booking"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200 text-sm sm:text-base"
           >
             Book Consultation
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>

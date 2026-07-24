@@ -95,15 +95,15 @@ export default function ServicesPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-teal-50 py-20">
+      <section className="bg-gradient-to-br from-slate-50 to-teal-50 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-4">
             Our Services
           </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Comprehensive Dental Services
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
             From routine check-ups to advanced procedures, we offer a full range 
             of dental services to meet all your oral health needs.
           </p>
@@ -111,16 +111,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Steps */}
-      <section className="py-12 border-b border-gray-100">
+      <section className="py-8 sm:py-12 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="text-center relative">
-                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-teal-600 font-bold text-lg">{step.step}</span>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                  <span className="text-teal-600 font-bold text-base sm:text-lg">{step.step}</span>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-1">{step.title}</h3>
-                <p className="text-sm text-gray-500">{step.description}</p>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">{step.title}</h3>
+                <p className="text-xs sm:text-sm text-gray-500">{step.description}</p>
                 {index < processSteps.length - 1 && (
                   <div className="hidden md:block absolute top-6 left-1/2 w-full h-0.5 bg-gray-200" style={{ transform: 'translateX(50%)' }} />
                 )}
@@ -131,24 +131,24 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
+          <div className="space-y-10 sm:space-y-16">
             {services.map((service, index) => (
-              <div key={index} id={service.title.toLowerCase().replace(/\s+/g, '-')} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-start`}>
+              <div key={index} id={service.title.toLowerCase().replace(/\s+/g, '-')} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 sm:gap-12 items-start`}>
                 <div className="flex-1">
-                  <div className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
-                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg`}>
+                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                     </svg>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">{service.title}</h2>
+                  <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{service.description}</p>
                   
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                     {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3 text-gray-600">
-                        <svg className="w-5 h-5 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <li key={i} className="flex items-center gap-2.5 sm:gap-3 text-gray-600 text-sm sm:text-base">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         {feature}
@@ -158,7 +158,7 @@ export default function ServicesPage() {
 
                   <Link
                     href="/marketing/booking"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-medium shadow-lg shadow-teal-200 transition-all duration-200"
+                    className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-medium shadow-lg shadow-teal-200 transition-all duration-200"
                   >
                     Book This Service
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -170,23 +170,23 @@ export default function ServicesPage() {
                 <div className="flex-1 w-full">
                   {/* Treatments Table */}
                   <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                    <div className="p-4 border-b border-gray-100 bg-gray-50">
-                      <h3 className="font-semibold text-gray-900">Available Treatments</h3>
+                    <div className="p-3 sm:p-4 border-b border-gray-100 bg-gray-50">
+                      <h3 className="font-semibold text-gray-900 text-sm sm:text-base">Available Treatments</h3>
                     </div>
                     <div className="divide-y divide-gray-100">
                       {service.treatments.map((treatment, i) => (
-                        <div key={i} className="flex items-center justify-between p-4 hover:bg-gray-50 transition-colors">
-                          <div>
-                            <p className="font-medium text-gray-900">{treatment.name}</p>
-                            <p className="text-sm text-gray-500">{treatment.duration}</p>
+                        <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:p-4 hover:bg-gray-50 transition-colors gap-1 sm:gap-0">
+                          <div className="flex-1">
+                            <p className="font-medium text-gray-900 text-sm sm:text-base">{treatment.name}</p>
+                            <p className="text-xs sm:text-sm text-gray-500">{treatment.duration}</p>
                           </div>
-                          <div className="text-right">
-                            <p className="font-semibold text-teal-600">{treatment.price}</p>
+                          <div className="sm:text-right">
+                            <p className="font-semibold text-teal-600 text-sm sm:text-base">{treatment.price}</p>
                           </div>
                         </div>
                       ))}
                     </div>
-                    <div className="p-4 border-t border-gray-100 bg-gray-50 text-center">
+                    <div className="p-3 sm:p-4 border-t border-gray-100 bg-gray-50 text-center">
                       <Link
                         href="/marketing/pricing"
                         className="text-sm text-teal-600 hover:text-teal-700 font-medium"
@@ -203,28 +203,28 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Not Sure Which Service You Need?</h2>
-          <p className="text-teal-100 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">Not Sure Which Service You Need?</h2>
+          <p className="text-teal-100 mb-6 sm:mb-8 text-sm sm:text-base">
             Book a free consultation and our experts will help you determine the best treatment plan.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link
               href="/marketing/booking"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200 text-sm sm:text-base"
             >
               Book Free Consultation
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <Link
               href="/marketing/pricing"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 font-semibold border border-white/30 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 font-semibold border border-white/30 transition-all duration-200 text-sm sm:text-base"
             >
               View Pricing
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>

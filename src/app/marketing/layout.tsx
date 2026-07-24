@@ -56,7 +56,7 @@ export default function MarketingLayout({
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <Link
                 href="/login"
                 className="hidden sm:flex px-4 py-2 text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors"
@@ -65,15 +65,16 @@ export default function MarketingLayout({
               </Link>
               <Link
                 href="/marketing/booking"
-                className="px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-semibold shadow-lg shadow-teal-200 transition-all duration-200"
+                className="hidden sm:inline-flex px-5 py-2.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-semibold shadow-lg shadow-teal-200 transition-all duration-200"
               >
                 Book Now
               </Link>
-              
+
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100"
+                className="md:hidden p-2.5 rounded-lg text-gray-600 hover:bg-gray-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               >
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {mobileMenuOpen ? (
@@ -88,35 +89,44 @@ export default function MarketingLayout({
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-100">
-              <div className="flex flex-col space-y-3">
-                <Link href="/marketing" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+            <div className="md:hidden py-4 border-t border-gray-100 bg-white relative z-50">
+              <div className="flex flex-col space-y-1">
+                <Link href="/marketing" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Home
                 </Link>
-                <Link href="/marketing/services" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/marketing/services" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Services
                 </Link>
-                <Link href="/marketing/about" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/marketing/about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   About
                 </Link>
-                <Link href="/marketing/team" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/marketing/team" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Our Team
                 </Link>
-                <Link href="/marketing/pricing" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/marketing/pricing" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Pricing
                 </Link>
-                <Link href="/marketing/gallery" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/marketing/gallery" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Gallery
                 </Link>
-                <Link href="/marketing/testimonials" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/marketing/testimonials" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Testimonials
                 </Link>
-                <Link href="/marketing/contact" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/marketing/contact" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Contact
                 </Link>
-                <Link href="/login" className="text-sm font-medium text-gray-700 hover:text-teal-600 py-2">
+                <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 py-3 px-3 rounded-lg transition-colors">
                   Sign In
                 </Link>
+                <div className="pt-2 border-t border-gray-100 mt-2">
+                  <Link
+                    href="/marketing/booking"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-center px-5 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 text-sm font-semibold shadow-lg shadow-teal-200 transition-all duration-200"
+                  >
+                    Book Appointment
+                  </Link>
+                </div>
               </div>
             </div>
           )}
@@ -129,11 +139,11 @@ export default function MarketingLayout({
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 mt-20">
+      <footer className="bg-gray-900 text-white py-10 sm:py-12 mt-16 sm:mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {/* Brand */}
-            <div className="md:col-span-2">
+            <div className="sm:col-span-2 md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center">
                   <span className="text-white font-bold text-lg">CD</span>
@@ -175,9 +185,9 @@ export default function MarketingLayout({
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm gap-4">
             <p>© {new Date().getFullYear()} Chelsea Dental Clinic. All rights reserved.</p>
-            <div className="flex gap-4 mt-4 md:mt-0">
+            <div className="flex gap-4">
               <Link href="/login" className="hover:text-white transition-colors">Staff Login</Link>
               <Link href="/register" className="hover:text-white transition-colors">Patient Registration</Link>
             </div>

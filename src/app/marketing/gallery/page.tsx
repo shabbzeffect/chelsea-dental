@@ -121,15 +121,15 @@ export default function GalleryPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-purple-50 py-20">
+      <section className="bg-gradient-to-br from-slate-50 to-purple-50 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
             Gallery
           </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             See Our Clinic
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Take a virtual tour of our modern facility and see the technology 
             and environment that makes Chelsea Dental special.
           </p>
@@ -137,14 +137,14 @@ export default function GalleryPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 border-b border-gray-100">
+      <section className="py-6 sm:py-8 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {galleryCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 ${
                   selectedCategory === category.id
                     ? 'bg-teal-600 text-white shadow-lg shadow-teal-200'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -158,9 +158,9 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {filteredItems.map((item) => (
               <div
                 key={item.id}
@@ -168,14 +168,14 @@ export default function GalleryPage() {
                 className="group cursor-pointer"
               >
                 <div className={`bg-gradient-to-br ${item.color} rounded-2xl aspect-[4/3] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02]`}>
-                  <div className="text-center text-white p-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="text-center text-white p-4 sm:p-6">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                    <p className="text-white/80 text-sm">{item.description}</p>
+                    <h3 className="text-sm sm:text-lg font-semibold mb-1">{item.title}</h3>
+                    <p className="text-white/80 text-xs sm:text-sm">{item.description}</p>
                   </div>
                 </div>
               </div>
@@ -196,21 +196,21 @@ export default function GalleryPage() {
           >
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+              className="absolute top-2 right-2 sm:-top-12 sm:right-0 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 sm:bg-transparent text-white hover:text-gray-300 transition-colors"
             >
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
             <div className={`bg-gradient-to-br ${selectedItem.color} rounded-2xl aspect-video flex items-center justify-center shadow-2xl`}>
-              <div className="text-center text-white p-8">
-                <div className="w-24 h-24 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="text-center text-white p-6 sm:p-8">
+                <div className="w-16 h-16 sm:w-24 sm:h-24 bg-white/20 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <svg className="w-8 h-8 sm:w-12 sm:h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={selectedItem.icon} />
                   </svg>
                 </div>
-                <h2 className="text-3xl font-bold mb-2">{selectedItem.title}</h2>
-                <p className="text-white/80 text-lg">{selectedItem.description}</p>
+                <h2 className="text-xl sm:text-3xl font-bold mb-2">{selectedItem.title}</h2>
+                <p className="text-white/80 text-sm sm:text-lg">{selectedItem.description}</p>
               </div>
             </div>
           </div>
@@ -218,22 +218,22 @@ export default function GalleryPage() {
       )}
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Visit Us Today</h2>
-          <p className="text-teal-100 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">Visit Us Today</h2>
+          <p className="text-teal-100 mb-6 sm:mb-8 text-sm sm:text-base">
             Experience our modern facility and friendly staff in person.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link
               href="/marketing/booking"
-              className="px-8 py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200 text-sm sm:text-base"
             >
               Book Appointment
             </Link>
             <Link
               href="/marketing/contact"
-              className="px-8 py-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 font-semibold border border-white/30 transition-all duration-200"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 font-semibold border border-white/30 transition-all duration-200 text-sm sm:text-base"
             >
               Contact Us
             </Link>

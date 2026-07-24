@@ -786,6 +786,76 @@ h4 { font-size: 1rem; }
   }
 }
 
+/* Touch-friendly tap targets */
+@media (pointer: coarse) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+}
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve mobile scrolling */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Mobile-optimized form inputs */
+@media (max-width: 640px) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"] {
+    font-size: 16px !important;
+  }
+}
+
+/* Mobile section spacing and overflow prevention */
+@media (max-width: 640px) {
+  /* Prevent absolute positioned elements from causing overlap */
+  section {
+    isolation: isolate;
+  }
+  
+  /* Ensure proper stacking context */
+  .relative {
+    isolation: isolate;
+  }
+  
+  /* Prevent text overflow */
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Prevent image/icon overflow */
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Prevent flex items from overlapping */
+  .flex {
+    min-height: 0;
+  }
+  
+  /* Prevent grid items from overlapping */
+  .grid {
+    min-height: 0;
+  }
+  
+  /* Ensure cards don't overflow */
+  .rounded-2xl, .rounded-3xl {
+    overflow: hidden;
+  }
+}
+
 /* ============================================================
    PRINT STYLES
    ============================================================ */

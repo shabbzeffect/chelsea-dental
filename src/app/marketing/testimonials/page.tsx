@@ -97,15 +97,15 @@ export default function TestimonialsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-amber-50 py-20">
+      <section className="bg-gradient-to-br from-slate-50 to-amber-50 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 rounded-full text-sm font-medium mb-4">
             Testimonials
           </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             What Our Patients Say
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it. Hear from our happy patients about their 
             experience at Chelsea Dental.
           </p>
@@ -113,13 +113,13 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-8 border-b border-gray-100">
+      <section className="py-6 sm:py-8 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-3xl font-bold text-teal-600">{stat.number}</p>
-                <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-teal-600">{stat.number}</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -127,30 +127,30 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-shadow">
-                <div className="flex gap-1 mb-4">
+              <div key={testimonial.id} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 hover:shadow-lg transition-shadow">
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292c.097-.346.018-.73-.267-1.017L4.049 6.215a1.603 1.603 0 011.902 0l1.07 3.292z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 italic leading-relaxed">"{testimonial.content}"</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold shadow-lg`}>
+                <p className="text-gray-600 mb-4 sm:mb-6 italic leading-relaxed text-sm sm:text-base">"{testimonial.content}"</p>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className={`w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold shadow-lg text-xs sm:text-sm flex-shrink-0`}>
                       {testimonial.name.charAt(0)}
                     </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 text-sm">{testimonial.name}</p>
+                    <div className="min-w-0">
+                      <p className="font-semibold text-gray-900 text-xs sm:text-sm truncate">{testimonial.name}</p>
                       <p className="text-xs text-gray-500">{testimonial.role}</p>
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">
+                  <span className="px-2 sm:px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium flex-shrink-0">
                     {testimonial.treatment}
                   </span>
                 </div>
@@ -161,43 +161,43 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Featured Testimonial */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 text-center">
-            <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-teal-200">
-              <span className="text-white font-bold text-3xl">"</span>
+          <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 text-center">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg shadow-teal-200">
+              <span className="text-white font-bold text-2xl sm:text-3xl">"</span>
             </div>
-            <p className="text-xl md:text-2xl text-gray-700 italic mb-6 leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl text-gray-700 italic mb-4 sm:mb-6 leading-relaxed">
               Chelsea Dental changed my life. After years of being self-conscious about my smile, 
               I now beam with confidence. The entire team made the journey comfortable and enjoyable. 
               I can't thank them enough!
             </p>
             <div className="flex items-center justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292c.097-.346.018-.73-.267-1.017L4.049 6.215a1.603 1.603 0 011.902 0l1.07 3.292z" />
                 </svg>
               ))}
             </div>
             <p className="font-semibold text-gray-900">Sarah Johnson</p>
-            <p className="text-sm text-gray-500">Patient since 2020 • Veneers</p>
+            <p className="text-xs sm:text-sm text-gray-500">Patient since 2020 • Veneers</p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Join Our Happy Patients?</h2>
-          <p className="text-teal-100 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">Ready to Join Our Happy Patients?</h2>
+          <p className="text-teal-100 mb-6 sm:mb-8 text-sm sm:text-base">
             Book your appointment today and experience the Chelsea Dental difference.
           </p>
           <Link
             href="/marketing/booking"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200 text-sm sm:text-base"
           >
             Book Your Appointment
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>

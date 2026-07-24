@@ -122,31 +122,31 @@ export default function BookingPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-teal-50">
-        <div className="max-w-md mx-auto text-center p-8">
-          <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-10 h-10 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-teal-50 px-4">
+        <div className="max-w-md mx-auto text-center p-6 sm:p-8">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5 sm:mb-6">
+            <svg className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Booking Submitted!</h1>
-          <p className="text-gray-600 mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Booking Submitted!</h1>
+          <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
             Thank you for booking with Chelsea Dental. We'll send you a confirmation 
             email shortly with all the details.
           </p>
-          <p className="text-sm text-gray-500 mb-6">
+          <p className="text-xs sm:text-sm text-gray-500 mb-5 sm:mb-6">
             Please check your email for login credentials to manage your appointments.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/marketing"
-              className="px-6 py-3 bg-teal-600 text-white rounded-xl hover:bg-teal-700 font-medium"
+              className="px-5 sm:px-6 py-2.5 sm:py-3 bg-teal-600 text-white rounded-xl hover:bg-teal-700 font-medium text-sm sm:text-base"
             >
               Back to Home
             </Link>
             <Link
               href="/login"
-              className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 font-medium"
+              className="px-5 sm:px-6 py-2.5 sm:py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 font-medium text-sm sm:text-base"
             >
               Sign In
             </Link>
@@ -157,31 +157,31 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="min-h-[80vh] bg-gradient-to-br from-slate-50 to-teal-50 py-12">
+    <div className="min-h-[80vh] bg-gradient-to-br from-slate-50 to-teal-50 py-8 sm:py-12">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Book an Appointment</h1>
-          <p className="text-gray-600">Fill in the details below to schedule your visit</p>
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Book an Appointment</h1>
+          <p className="text-gray-600 text-sm sm:text-base">Fill in the details below to schedule your visit</p>
         </div>
 
         {/* Progress Steps */}
-        <div className="flex items-center justify-center mb-8">
+        <div className="flex items-center justify-center mb-6 sm:mb-8">
           {[1, 2, 3].map((s) => (
             <div key={s} className="flex items-center">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-200 ${
+              <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm transition-all duration-200 ${
                 step >= s 
                   ? 'bg-teal-600 text-white' 
                   : 'bg-gray-200 text-gray-500'
               }`}>
                 {step > s ? (
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 ) : s}
               </div>
               {s < 3 && (
-                <div className={`w-20 h-1 mx-2 transition-colors duration-200 ${
+                <div className={`w-10 sm:w-20 h-1 mx-1.5 sm:mx-2 transition-colors duration-200 ${
                   step > s ? 'bg-teal-600' : 'bg-gray-200'
                 }`} />
               )}
@@ -190,14 +190,14 @@ export default function BookingPage() {
         </div>
 
         {/* Step Labels */}
-        <div className="flex justify-between mb-8 px-4">
-          <span className={`text-sm font-medium ${step >= 1 ? 'text-teal-600' : 'text-gray-400'}`}>Personal Info</span>
-          <span className={`text-sm font-medium ${step >= 2 ? 'text-teal-600' : 'text-gray-400'}`}>Appointment</span>
-          <span className={`text-sm font-medium ${step >= 3 ? 'text-teal-600' : 'text-gray-400'}`}>Confirm</span>
+        <div className="flex justify-between mb-6 sm:mb-8 px-2 sm:px-4">
+          <span className={`text-xs sm:text-sm font-medium ${step >= 1 ? 'text-teal-600' : 'text-gray-400'}`}>Personal Info</span>
+          <span className={`text-xs sm:text-sm font-medium ${step >= 2 ? 'text-teal-600' : 'text-gray-400'}`}>Appointment</span>
+          <span className={`text-xs sm:text-sm font-medium ${step >= 3 ? 'text-teal-600' : 'text-gray-400'}`}>Confirm</span>
         </div>
 
         {/* Form Card */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 sm:p-6 md:p-8">
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
               {error}
@@ -424,24 +424,24 @@ export default function BookingPage() {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between mt-8">
+            <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6 sm:mt-8">
               {step > 1 ? (
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors"
+                  className="w-full sm:w-auto px-6 py-3 border border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 font-medium transition-colors order-2 sm:order-1"
                 >
                   Back
                 </button>
               ) : (
-                <div />
+                <div className="hidden sm:block" />
               )}
               
               {step < 3 ? (
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 font-semibold shadow-lg shadow-teal-200 transition-all duration-200"
+                  className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 font-semibold shadow-lg shadow-teal-200 transition-all duration-200 order-1 sm:order-2"
                 >
                   Continue
                 </button>
@@ -449,7 +449,7 @@ export default function BookingPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 font-semibold shadow-lg shadow-teal-200 transition-all duration-200 disabled:opacity-50"
+                  className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 font-semibold shadow-lg shadow-teal-200 transition-all duration-200 disabled:opacity-50 order-1 sm:order-2"
                 >
                   {submitting ? 'Submitting...' : 'Confirm Booking'}
                 </button>

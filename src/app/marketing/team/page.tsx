@@ -106,15 +106,15 @@ export default function TeamPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-50 to-purple-50 py-20">
+      <section className="bg-gradient-to-br from-slate-50 to-purple-50 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
             Our Team
           </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Meet Our Expert Team
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Our dedicated team of dental professionals is committed to providing 
             you with the highest quality care in a welcoming environment.
           </p>
@@ -122,59 +122,59 @@ export default function TeamPage() {
       </section>
 
       {/* Dentists Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-4">
               Clinical Team
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Dentists
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Highly qualified professionals with decades of combined experience 
               in various dental specialties.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {dentists.map((dentist, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
                 {/* Header */}
-                <div className={`bg-gradient-to-br ${dentist.color} p-6 text-center`}>
-                  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <span className="text-3xl font-bold bg-gradient-to-br bg-clip-text text-transparent" style={{backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`}}>
+                <div className={`bg-gradient-to-br ${dentist.color} p-5 sm:p-6 text-center`}>
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                    <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-br bg-clip-text text-transparent" style={{backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`}}>
                       {dentist.initial}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white">{dentist.name}</h3>
-                  <p className="text-white/80 text-sm">{dentist.role}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">{dentist.name}</h3>
+                  <p className="text-white/80 text-xs sm:text-sm">{dentist.role}</p>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="inline-block px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">
+                <div className="p-5 sm:p-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                    <span className="inline-block px-2.5 sm:px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">
                       {dentist.specialty}
                     </span>
-                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
+                    <span className="inline-block px-2.5 sm:px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
                       {dentist.experience}
                     </span>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{dentist.bio}</p>
+                  <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{dentist.bio}</p>
 
-                  <div className="mb-4">
-                    <p className="text-xs font-medium text-gray-500 mb-2">Education</p>
-                    <p className="text-sm text-gray-700">{dentist.education}</p>
+                  <div className="mb-3 sm:mb-4">
+                    <p className="text-xs font-medium text-gray-500 mb-1.5 sm:mb-2">Education</p>
+                    <p className="text-xs sm:text-sm text-gray-700">{dentist.education}</p>
                   </div>
 
                   <div>
-                    <p className="text-xs font-medium text-gray-500 mb-2">Achievements</p>
+                    <p className="text-xs font-medium text-gray-500 mb-1.5 sm:mb-2">Achievements</p>
                     <ul className="space-y-1">
                       {dentist.achievements.map((achievement, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <li key={i} className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           {achievement}
@@ -190,30 +190,30 @@ export default function TeamPage() {
       </section>
 
       {/* Support Staff Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
               Support Team
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Support Staff
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               The friendly faces who make your visit comfortable and ensure 
               everything runs smoothly.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {supportStaff.map((staff, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 text-center hover:shadow-lg transition-shadow">
-                <div className={`w-20 h-20 bg-gradient-to-br ${staff.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}>
-                  <span className="text-2xl font-bold text-white">{staff.initial}</span>
+              <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 text-center hover:shadow-lg transition-shadow">
+                <div className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${staff.color} rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg`}>
+                  <span className="text-xl sm:text-2xl font-bold text-white">{staff.initial}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">{staff.name}</h3>
-                <p className="text-teal-600 text-sm font-medium mb-2">{staff.role}</p>
-                <p className="text-gray-500 text-sm">{staff.description}</p>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">{staff.name}</h3>
+                <p className="text-teal-600 text-xs sm:text-sm font-medium mb-2">{staff.role}</p>
+                <p className="text-gray-500 text-xs sm:text-sm">{staff.description}</p>
               </div>
             ))}
           </div>
@@ -221,18 +221,18 @@ export default function TeamPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-teal-600 to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Meet Our Team?</h2>
-          <p className="text-teal-100 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">Ready to Meet Our Team?</h2>
+          <p className="text-teal-100 mb-6 sm:mb-8 text-sm sm:text-base">
             Book a consultation and experience the Chelsea Dental difference.
           </p>
           <Link
             href="/marketing/booking"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200 text-sm sm:text-base"
           >
             Book Consultation
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>

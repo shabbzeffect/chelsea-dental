@@ -76,40 +76,40 @@ export default function MarketingHome() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-50 via-teal-50 to-blue-50 overflow-hidden">
-        {/* Background Decorations */}
-        <div className="absolute inset-0 overflow-hidden">
+      <section className="relative min-h-[auto] sm:min-h-[90vh] flex items-center bg-gradient-to-br from-slate-50 via-teal-50 to-blue-50 overflow-hidden">
+        {/* Background Decorations - hidden on mobile to prevent overlap */}
+        <div className="absolute inset-0 overflow-hidden hidden sm:block">
           <div className="absolute top-20 left-10 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-100/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Left Content */}
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-6">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-teal-100 text-teal-700 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 Trusted by 10,000+ Patients
               </div>
               
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Your Smile Deserves{' '}
                 <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
                   The Best Care
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 Experience world-class dental care with our team of expert dentists. 
                 From routine check-ups to complete smile makeovers, we're here for you.
               </p>
 
               {/* Quick Booking Widget */}
-              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Book Appointment</h3>
+              <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 border border-gray-100">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">Quick Book Appointment</h3>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="date"
@@ -127,18 +127,18 @@ export default function MarketingHome() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="mt-8 flex flex-wrap gap-6 text-gray-500">
+              <div className="mt-6 sm:mt-8 flex flex-wrap gap-4 sm:gap-6 text-gray-500">
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm font-medium">Award Winning</span>
+                  <span className="text-xs sm:text-sm font-medium">Award Winning</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm font-medium">24/7 Support</span>
+                  <span className="text-xs sm:text-sm font-medium">24/7 Support</span>
                 </div>
               </div>
             </div>
@@ -163,12 +163,12 @@ export default function MarketingHome() {
 
       {/* Stats Bar */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <p className="text-3xl font-bold text-teal-600">{stat.number}</p>
-                <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-teal-600">{stat.number}</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -176,38 +176,38 @@ export default function MarketingHome() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-4">
               Our Services
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Comprehensive Dental Care
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               From routine check-ups to advanced procedures, we offer a full range of dental services 
               to meet all your oral health needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, index) => (
               <Link
                 key={index}
                 href="/marketing/services"
-                className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300"
+                className="group bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300"
               >
-                <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                <div className="mt-4 flex items-center text-teal-600 text-sm font-medium">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{service.description}</p>
+                <div className="mt-3 sm:mt-4 flex items-center text-teal-600 text-xs sm:text-sm font-medium">
                   Learn more
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
@@ -215,10 +215,10 @@ export default function MarketingHome() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <Link
               href="/marketing/services"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-teal-500 text-teal-600 rounded-xl hover:bg-teal-50 font-semibold transition-all duration-200"
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-white border-2 border-teal-500 text-teal-600 rounded-xl hover:bg-teal-50 font-semibold transition-all duration-200 text-sm sm:text-base"
             >
               View All Services
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -230,62 +230,62 @@ export default function MarketingHome() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
               <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
                 Why Choose Us
               </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 The Chelsea Dental Difference
               </h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
                 We combine cutting-edge technology with compassionate care to deliver 
                 exceptional dental experiences. Our team of experts is dedicated to 
                 making your visit comfortable and effective.
               </p>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Advanced Technology</h4>
-                    <p className="text-sm text-gray-600">State-of-the-art equipment for precise, comfortable treatments.</p>
+                    <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Advanced Technology</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">State-of-the-art equipment for precise, comfortable treatments.</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Expert Team</h4>
-                    <p className="text-sm text-gray-600">50+ certified dentists with years of specialized experience.</p>
+                    <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Expert Team</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">50+ certified dentists with years of specialized experience.</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Flexible Scheduling</h4>
-                    <p className="text-sm text-gray-600">Book appointments online 24/7 at your convenience.</p>
+                    <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">Flexible Scheduling</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">Book appointments online 24/7 at your convenience.</p>
                   </div>
                 </div>
 
                 <Link
                   href="/marketing/gallery"
-                  className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium mt-4"
+                  className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium mt-4 text-sm sm:text-base"
                 >
                   View our clinic gallery
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -296,20 +296,20 @@ export default function MarketingHome() {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-teal-500 to-emerald-500 rounded-3xl p-8 text-white shadow-2xl shadow-teal-200">
+              <div className="bg-gradient-to-br from-teal-500 to-emerald-500 rounded-3xl p-6 sm:p-8 text-white shadow-2xl shadow-teal-200">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Smile?</h3>
-                  <p className="text-teal-100 mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to Transform Your Smile?</h3>
+                  <p className="text-teal-100 mb-4 sm:mb-6 text-sm sm:text-base">
                     Schedule your free consultation today and discover what we can do for you.
                   </p>
                   <Link
                     href="/marketing/booking"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-teal-600 rounded-xl hover:bg-teal-50 font-semibold shadow-lg transition-all duration-200"
+                    className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-teal-600 rounded-xl hover:bg-teal-50 font-semibold shadow-lg transition-all duration-200 text-sm sm:text-base"
                   >
                     Book Free Consultation
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -324,22 +324,22 @@ export default function MarketingHome() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-16">
             <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
               Testimonials
             </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               What Our Patients Say
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-4">
+            <p className="text-gray-600 max-w-2xl mx-auto mb-4 text-sm sm:text-base">
               Don't just take our word for it. Hear from our happy patients about their 
               experience at Chelsea Dental.
             </p>
             <Link
               href="/marketing/testimonials"
-              className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium"
+              className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium text-sm sm:text-base"
             >
               View all testimonials
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -348,23 +348,23 @@ export default function MarketingHome() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
-                <div className="flex gap-1 mb-4">
+              <div key={index} className="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292c.097-.346.018-.73-.267-1.017L4.049 6.215a1.603 1.603 0 011.902 0l1.07 3.292z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
+                <p className="text-gray-600 mb-4 sm:mb-6 italic text-sm sm:text-base">"{testimonial.content}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center text-white font-semibold text-xs sm:text-sm">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">{testimonial.name}</p>
+                    <p className="font-semibold text-gray-900 text-xs sm:text-sm">{testimonial.name}</p>
                     <p className="text-xs text-gray-500">{testimonial.role}</p>
                   </div>
                 </div>
@@ -375,25 +375,25 @@ export default function MarketingHome() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-teal-600 to-emerald-600">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-teal-600 to-emerald-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
             Ready to Start Your Journey to a Perfect Smile?
           </h2>
-          <p className="text-teal-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-teal-100 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
             Book your appointment today and take the first step towards a healthier, 
             more confident smile. We're here to help you every step of the way.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Link
               href="/marketing/booking"
-              className="px-8 py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-teal-600 rounded-2xl hover:bg-teal-50 font-semibold shadow-xl transition-all duration-200 text-sm sm:text-base"
             >
               Book Appointment
             </Link>
             <Link
               href="/marketing/contact"
-              className="px-8 py-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 font-semibold border border-white/30 transition-all duration-200"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white/20 text-white rounded-2xl hover:bg-white/30 font-semibold border border-white/30 transition-all duration-200 text-sm sm:text-base"
             >
               Contact Us
             </Link>
