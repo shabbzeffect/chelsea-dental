@@ -219,8 +219,8 @@ export default function TeamPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <div className="p-4 sm:p-5 text-center -mt-8 relative">
-                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-white overflow-hidden mx-auto mb-3 shadow-lg`}>
+                <div className="p-4 sm:p-5 text-center">
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-white overflow-hidden mx-auto -mt-10 sm:-mt-12 relative z-10 mb-3 shadow-lg`}>
                     <img 
                       src={staff.image} 
                       alt={staff.name}
