@@ -397,43 +397,84 @@ export default function MarketingHome() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
+      <section className="relative py-20 sm:py-28 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-teal-50/30"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-100/30 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16 sm:mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-100/80 text-amber-700 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292c.097-.346.018-.73-.267-1.017L4.049 6.215a1.603 1.603 0 011.902 0l1.07 3.292z" />
+              </svg>
               Testimonials
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              What Our Patients Say
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              What Our{' '}
+              <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
+                Patients Say
+              </span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-4 text-sm sm:text-base">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               Don't just take our word for it. Hear from our happy patients about their 
               experience at Chelsea Dental.
             </p>
-            <Link
-              href="/marketing/testimonials"
-              className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium text-sm sm:text-base"
-            >
-              View all testimonials
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+          {/* Stats Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16">
+            <div className="bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="text-3xl sm:text-4xl font-bold text-teal-600 mb-1">500+</div>
+              <div className="text-sm text-gray-500">5-Star Reviews</div>
+            </div>
+            <div className="bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="text-3xl sm:text-4xl font-bold text-amber-500 mb-1">4.9</div>
+              <div className="text-sm text-gray-500">Average Rating</div>
+            </div>
+            <div className="bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="text-3xl sm:text-4xl font-bold text-emerald-500 mb-1">99%</div>
+              <div className="text-sm text-gray-500">Satisfaction Rate</div>
+            </div>
+            <div className="bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="text-3xl sm:text-4xl font-bold text-purple-500 mb-1">95%</div>
+              <div className="text-sm text-gray-500">Would Recommend</div>
+            </div>
+          </div>
+
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
-                <div className="flex gap-1 mb-3 sm:mb-4">
+              <div 
+                key={index} 
+                className="group relative bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl hover:shadow-teal-100/30 hover:border-teal-200 transition-all duration-500"
+              >
+                {/* Quote Icon */}
+                <div className="absolute -top-4 left-6 w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-200/50 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+
+                {/* Stars */}
+                <div className="flex gap-1 mb-4 sm:mb-5">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292c.097-.346.018-.73-.267-1.017L4.049 6.215a1.603 1.603 0 011.902 0l1.07 3.292z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 sm:mb-6 italic text-sm sm:text-base">"{testimonial.content}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden">
+
+                {/* Content */}
+                <p className="text-gray-600 mb-6 sm:mb-8 italic text-sm sm:text-base leading-relaxed">
+                  &ldquo;{testimonial.content}&rdquo;
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden ring-2 ring-teal-100 group-hover:ring-teal-200 transition-all">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.name}
@@ -441,12 +482,28 @@ export default function MarketingHome() {
                     />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-xs sm:text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-gray-500">{testimonial.role}</p>
+                    <p className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</p>
+                    <p className="text-xs sm:text-sm text-gray-500">{testimonial.role}</p>
                   </div>
                 </div>
+
+                {/* Decorative corner */}
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-teal-50 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12 sm:mt-16">
+            <Link
+              href="/marketing/testimonials"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl hover:border-teal-300 hover:text-teal-600 font-semibold transition-all duration-300"
+            >
+              View All Testimonials
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
