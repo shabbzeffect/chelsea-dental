@@ -55,16 +55,19 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const appointment = await db.query.appointments.findFirst({
-      where: eq(schema.appointments.id, id),
-      with: {
-        patient: true,
-        dentist: true,
-        appointmentType: true,
-        reminders: true,
-        treatments: true,
-      },
-    });
+    let appointment;
+    try {
+      // Query without complex relations to avoid ORM issues
+      appointment = await db.query.appointments.findFirst({
+        where: eq(schema.appointments.id, id),
+      });
+    } catch (dbError: any) {
+      console.error('Database query error:', dbError.message || dbError);
+      return NextResponse.json(
+        { error: 'Database error: ' + (dbError.message || 'Unknown error') },
+        { status: 500 }
+      );
+    }
 
     if (!appointment) {
       return NextResponse.json(
@@ -73,7 +76,49 @@ export async function GET(
       );
     }
 
-    return NextResponse.json({ appointment });
+    // Fetch related data separately
+    let patient = null;
+    let dentist = null;
+    let appointmentType = null;
+
+    if (appointment.patientId) {
+      try {
+        patient = await db.query.patients.findFirst({
+          where: eq(schema.patients.id, appointment.patientId),
+        });
+      } catch (e) {
+        console.error('Error fetching patient:', e);
+      }
+    }
+
+    if (appointment.dentistId) {
+      try {
+        dentist = await db.query.staff.findFirst({
+          where: eq(schema.staff.id, appointment.dentistId),
+        });
+      } catch (e) {
+        console.error('Error fetching dentist:', e);
+      }
+    }
+
+    if (appointment.appointmentTypeId) {
+      try {
+        appointmentType = await db.query.appointmentTypes.findFirst({
+          where: eq(schema.appointmentTypes.id, appointment.appointmentTypeId),
+        });
+      } catch (e) {
+        console.error('Error fetching appointment type:', e);
+      }
+    }
+
+    return NextResponse.json({
+      appointment: {
+        ...appointment,
+        patient,
+        dentist,
+        appointmentType,
+      },
+    });
   } catch (error) {
     console.error('Get appointment error:', error);
     return NextResponse.json(
