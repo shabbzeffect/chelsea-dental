@@ -6,45 +6,51 @@ import { useState } from 'react';
 const services = [
   {
     title: 'General Dentistry',
-    description: 'Comprehensive check-ups, cleanings, and preventive care to keep your smile healthy.',
+    description: 'Comprehensive check-ups, cleanings, and preventive care to keep your smile healthy and bright.',
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     color: 'from-blue-500 to-blue-600',
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop',
+    features: ['Check-ups', 'Cleanings', 'Fillings', 'X-Rays'],
   },
   {
     title: 'Cosmetic Dentistry',
-    description: 'Teeth whitening, veneers, and smile makeovers to enhance your appearance.',
+    description: 'Teeth whitening, veneers, and smile makeovers to enhance your appearance and confidence.',
     icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
     color: 'from-purple-500 to-purple-600',
-    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&h=400&fit=crop',
+    features: ['Whitening', 'Veneers', 'Bonding', 'Makeovers'],
   },
   {
     title: 'Orthodontics',
-    description: 'Braces, Invisalign, and aligners for perfect teeth alignment.',
+    description: 'Braces, Invisalign, and aligners for perfect teeth alignment and a beautiful smile.',
     icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
     color: 'from-emerald-500 to-emerald-600',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop',
+    features: ['Invisalign', 'Braces', 'Retainers', 'Alignment'],
   },
   {
-    title: 'Implants',
-    description: 'Dental implants to replace missing teeth with natural-looking alternatives.',
+    title: 'Dental Implants',
+    description: 'Permanent, natural-looking solutions to replace missing teeth and restore your smile.',
     icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.78 0-2.678-2.149-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
     color: 'from-amber-500 to-orange-500',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop',
+    features: ['Single Implant', 'All-on-4', 'Bone Graft', 'Crown'],
   },
   {
-    title: 'Root Canal',
-    description: 'Pain-free root canal treatments to save and preserve your natural teeth.',
+    title: 'Root Canal Therapy',
+    description: 'Pain-free root canal treatments to save and preserve your natural teeth effectively.',
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
     color: 'from-rose-500 to-rose-600',
-    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=400&fit=crop',
+    features: ['Pain-Free', 'Same Day', 'Expert Care', '99% Success'],
   },
   {
     title: 'Emergency Care',
-    description: '24/7 emergency dental services for urgent situations.',
+    description: '24/7 emergency dental services for urgent situations when you need immediate help.',
     icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
     color: 'from-red-500 to-red-600',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=250&fit=crop',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop',
+    features: ['24/7 Available', 'Quick Response', 'Urgent Care', 'Expert Team'],
   },
 ];
 
@@ -192,48 +198,82 @@ export default function MarketingHome() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-4">
+      <section className="relative py-20 sm:py-28 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-teal-50/30 to-gray-50"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16 sm:mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-100/80 text-teal-700 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
               Our Services
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Comprehensive Dental Care
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Comprehensive{' '}
+              <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
+                Dental Care
+              </span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               From routine check-ups to advanced procedures, we offer a full range of dental services 
               to meet all your oral health needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <Link
                 key={index}
                 href="/marketing/services"
-                className="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-teal-200 transition-all duration-300 overflow-hidden"
+                className="group relative bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-2xl hover:shadow-teal-100/50 hover:border-teal-200 transition-all duration-500 overflow-hidden"
               >
-                <div className="relative h-40 sm:h-48 overflow-hidden">
+                {/* Image Section */}
+                <div className="relative h-48 sm:h-56 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className={`absolute top-3 left-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  
+                  {/* Floating Icon */}
+                  <div className={`absolute bottom-4 left-4 w-14 h-14 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                     </svg>
                   </div>
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <span className="text-white font-medium flex items-center gap-2">
+                      Learn More
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
-                <div className="p-4 sm:p-5">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{service.description}</p>
-                  <div className="mt-3 flex items-center text-teal-600 text-xs sm:text-sm font-medium">
-                    Learn more
-                    <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+
+                {/* Content Section */}
+                <div className="p-6 sm:p-7">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-600 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  
+                  {/* Decorative Line */}
+                  <div className="flex items-center gap-3">
+                    <div className="h-0.5 flex-1 bg-gradient-to-r from-teal-500 to-transparent rounded-full"></div>
+                    <svg className="w-5 h-5 text-teal-500 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
                 </div>
@@ -241,16 +281,23 @@ export default function MarketingHome() {
             ))}
           </div>
 
-          <div className="text-center mt-8 sm:mt-12">
-            <Link
-              href="/marketing/services"
-              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-white border-2 border-teal-500 text-teal-600 rounded-xl hover:bg-teal-50 font-semibold transition-all duration-200 text-sm sm:text-base"
-            >
-              View All Services
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+          {/* CTA Section */}
+          <div className="mt-16 sm:mt-20 text-center">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-4 p-6 sm:p-8 bg-white rounded-3xl shadow-lg border border-gray-100">
+              <div className="text-center sm:text-left">
+                <h3 className="text-lg font-bold text-gray-900 mb-1">Ready to get started?</h3>
+                <p className="text-gray-500 text-sm">Book a free consultation today</p>
+              </div>
+              <Link
+                href="/marketing/booking"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 font-semibold shadow-lg shadow-teal-200/50 hover:shadow-xl hover:shadow-teal-300/50 transition-all duration-300"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Book Consultation
+              </Link>
+            </div>
           </div>
         </div>
       </section>
